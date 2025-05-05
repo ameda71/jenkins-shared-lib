@@ -1,7 +1,11 @@
+import org.mycompany.utils.Logger
+
 def call(String status = "SUCCESS") {
+    def logger = new Logger(this)
+
     if (status == "SUCCESS") {
-        echo "✅ Build completed successfully!"
+        logger.info("Build completed successfully.")
     } else {
-        echo "❌ Build failed!"
+        logger.error("Build failed.")
     }
 }
